@@ -4,3 +4,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.left-aligned {
+  float: left;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
