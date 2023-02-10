@@ -58,6 +58,10 @@ class App {
                 $userController->delete($this->app_params);
             } else if ($this->app_method=='post'){
                 $userController->post($this->app_params);
+            } else if ($this->app_method=='add'){
+                $userController->add($this->app_params);
+            } else if ($this->app_method=='put'){
+                $userController->put();
             } else {
                 $userController->index();
             }

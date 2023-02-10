@@ -1,3 +1,11 @@
+<div class="form-container">
+   <a href="/user/add">
+      <button class="mdc-button mdc-button--raised" style="margin-top: 20px;">
+      ADICIONAR
+      </button>
+   </a>      
+</div>
+
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
    <thead>
       <tr>

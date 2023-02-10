@@ -29,6 +29,13 @@ class UserController {
         $this->view->render('view_user_data_content.php',$data);
     }
     
+    public function add(){
+        $users = [];
+        $users[] = (object) array( 'name' => '', 'email' => '' );
+        $data = array('users' => $users );
+        $this->view->render('view_user_add.php',$data);
+    }
+
     public function edit(int $id){
         $users = $this->user_model->getById($id);
         $data = array('users' => $users );
@@ -48,6 +55,15 @@ class UserController {
                   'email' => htmlspecialchars($_GET["email"]),
            );
         $result = $this->user_model->post($id,$data);
+        $this->index();
+    }
+
+    public function put() {
+        $data = 
+           array( 'name' => htmlspecialchars($_GET["name"]),
+                  'email' => htmlspecialchars($_GET["email"]),
+           );
+        $result = $this->user_model->insert($data);
         $this->index();
     }
 

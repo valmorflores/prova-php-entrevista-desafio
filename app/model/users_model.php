@@ -39,4 +39,18 @@ class UsersModel {
         return $dataUpdate;
          
     }
+
+    public function insert($data) {
+        $data = 
+           array( 'name' => htmlspecialchars($_GET["name"]),
+                  'email' => htmlspecialchars($_GET["email"]),
+           );
+        $sql = "INSERT INTO users (id, name, email) VALUES ( NULL, " . 
+           "'" . $data['name'] . "', " . 
+           "'" . $data['email'] . "'" . 
+           ")";
+       $dataPut = $this->connection->query( $sql );
+       $dataPut->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
+       return $dataPut;
+    }
 }

@@ -1,24 +1,32 @@
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-   <thead>
-      <tr>
-         <th>Id</th>
-         <th class="mdl-data-table__cell--non-numeric">Nome</th>
-         <th class="mdl-data-table__cell--non-numeric">e-mail</th>
-         <th class="mdl-data-table__cell--non-numeric">Opções</th>
-      </tr>
-   </thead>
-<tbody>
 <?php 
 foreach($data['users'] as $user) {
 ?>
-   <tr>
-      <td><?php echo $user->id;?></td>
-      <td><?php echo $user->name;?></td>
-      <td><?php echo $user->email;?></td>    
-      <td><a href='/user/edit/<?php echo $user->id;?>'>Editar</a>
-      <a href='/user/delete/<?php echo $user->id;?>'>Excluir</a></td>
-   </tr>
+
+<form action="/user/put/0">
+
+   <div class="form-container">
+
+      <div class="mdc-text-field" style="margin-top: 20px;">
+         <label class="mdc-floating-label" for="name">Name</label>
+         <input type="text" id="name" name="name" class="mdc-text-field__input" value="<?php echo $user->name;?>">
+         <div class="mdc-line-ripple"></div>
+      </div>
+
+      <div class="mdc-text-field" style="margin-top: 20px;">
+         <label class="mdc-floating-label" for="email">E-mail</label>
+         <input type="text" id="email" name="email" class="mdc-text-field__input" value="<?php echo $user->email;?>">
+         <div class="mdc-line-ripple"></div>
+      </div>
+      
+      <button class="mdc-button mdc-button--raised" style="margin-top: 20px;">
+      ADICIONAR
+      </button>
+
+   </div>    
+
+</form>
+
 <?php } ?>
-</tbody>
-</table>
+
+
 
