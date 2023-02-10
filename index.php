@@ -1,34 +1,22 @@
 <?php
 
-require 'connection.php';
+namespace App;
 
-$connection = new Connection();
+require_once 'app/controller/connection.php';
+require_once 'app/controller/user_controller.php';
 
-$users = $connection->query("SELECT * FROM users");
+use App\Controller\Connection;
+use App\Controller\UserController;
 
-echo "<table border='1'>
+$app = new App();
+$app->run();
 
-    <tr>
-        <th>ID</th>    
-        <th>Nome</th>    
-        <th>Email</th>
-        <th>Ação</th>    
-    </tr>
-";
-
-foreach($users as $user) {
-
-    echo sprintf("<tr>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>
-                           <a href='#'>Editar</a>
-                           <a href='#'>Excluir</a>
-                      </td>
-                   </tr>",
-        $user->id, $user->name, $user->email);
-
+class App {
+    
+    public function run(){
+        $connection = new Connection();
+        $userController = new UserController($connection);
+        $userController->index();
+    }
+    
 }
-
-echo "</table>";

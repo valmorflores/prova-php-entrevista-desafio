@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 class Connection {
 
     private $databaseFile;
@@ -7,13 +9,14 @@ class Connection {
 
     public function __construct()
     {
-        $this->databaseFile = realpath(__DIR__ . "/database/db.sqlite");
+        $path = __DIR__ . "/../../database/db.sqlite";
+        $this->databaseFile = realpath($path);
         $this->connect();
     }
 
     private function connect()
     {
-        return $this->connection = new PDO("sqlite:{$this->databaseFile}");
+        return $this->connection = new \PDO("sqlite:{$this->databaseFile}");
     }
 
     public function getConnection()
@@ -25,7 +28,7 @@ class Connection {
     {
         $result      = $this->getConnection()->query($query);
 
-        $result->setFetchMode(PDO::FETCH_INTO, new stdClass);
+        $result->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
 
         return $result;
     }
