@@ -27,4 +27,16 @@ class UsersModel {
         $result->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
         return $result;
     }
+
+    public function post($id,$data){
+        $sql = "UPDATE users SET " . 
+            " name = '" . $data['name'] . "', " . 
+            " email = '" . $data['email'] . "'" . 
+            " WHERE id = " . $id;
+        
+        $dataUpdate = $this->connection->query( $sql );
+        $dataUpdate->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
+        return $dataUpdate;
+         
+    }
 }

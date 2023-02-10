@@ -12,11 +12,13 @@ class UserController {
  
     private $connection;
     private $user_model;
+    private $view;
     
     public function __construct($conn) {
         $this->connection = $conn;
         $this->user_model = new UsersModel();
         $this->user_model->setConnection($this->connection);
+        $this->view = new ViewController();
     }
     
     public function index(){
@@ -24,23 +26,29 @@ class UserController {
         $data = array(
             'users' => $users
         );
-        $viewController = new ViewController();
-        $viewController->render('view_user_data_content.php',$data);
+        $this->view->render('view_user_data_content.php',$data);
     }
     
     public function edit(int $id){
         $users = $this->user_model->getById($id);
         $data = array('users' => $users );
-        $viewController = new ViewController();
-        $viewController->render('view_user_edit.php',$data);
+        $this->view->render('view_user_edit.php',$data);
     }
 
     public function delete(int $id){
         $users = $this->user_model->getById($id);
         $data = array('users' => $users );
-        $viewController = new ViewController();
-        $viewController->render('view_user_delete.php',$data);
+        $this->view->render('view_user_delete.php',$data);
     }
 
+    public function post($id) {
+        $id = $_GET["id"];
+        $data = 
+           array( 'name' => htmlspecialchars($_GET["name"]),
+                  'email' => htmlspecialchars($_GET["email"]),
+           );
+        $result = $this->user_model->post($id,$data);
+        $this->index();
+    }
 
 }
