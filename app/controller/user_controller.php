@@ -32,7 +32,14 @@ class UserController {
         $users = $this->user_model->getById($id);
         $data = array('users' => $users );
         $viewController = new ViewController();
-        $viewController->render('view_edit_user.php',$data);
+        $viewController->render('view_user_edit.php',$data);
+    }
+
+    public function delete(int $id){
+        $users = $this->user_model->getById($id);
+        $data = array('users' => $users );
+        $viewController = new ViewController();
+        $viewController->render('view_user_delete.php',$data);
     }
 
 

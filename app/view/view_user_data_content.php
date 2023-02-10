@@ -15,10 +15,14 @@ foreach($data['users'] as $user) {
       <td><?php echo $user->id;?></td>
       <td><?php echo $user->name;?></td>
       <td><?php echo $user->email;?></td>    
-      <td><a href='/user/edit/<?php echo $user->id;?>'>Editar</a>
-      <a href='/user/delete/<?php echo $user->id;?>'>Excluir</a></td>
+      <td><a href='/user/edit/<?php echo $user->id;?>'>
+      <button class="mdc-button">Editar</button></a>
+      <a href='/user/delete/<?php echo $user->id;?>'>
+      <button class="mdc-button">Excluir</button></a>
+      </td>
    </tr>
 <?php } ?>
 </tbody>
 </table>
 
+ 

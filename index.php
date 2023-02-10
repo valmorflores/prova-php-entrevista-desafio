@@ -15,7 +15,8 @@ $method = '';
 $module = '';
 $params = '';
 
-// Manual routes
+// Manual routes, 
+// todo: valmor - build a route manager in a Class called Route
 if (isset($uri[1])){
     if ($uri[1]=='user'){
         $module = 'user';
@@ -28,11 +29,7 @@ if (isset($uri[1])){
        $params = $uri[3];
     }
 }
-else
-{
-    // Do none, default uri
-
-}
+ 
 
 $app = new App($module, $method, $params);
 $app->run();
@@ -57,6 +54,8 @@ class App {
             $userController = new UserController($connection);
             if ($this->app_method=='edit'){
                 $userController->edit($this->app_params);
+            } else if ($this->app_method=='delete'){
+                $userController->delete($this->app_params);
             } else {
                 $userController->index();
             }
