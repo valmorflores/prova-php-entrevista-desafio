@@ -77,7 +77,7 @@ Optei então por fazer uma exibição com uma separação de php e html na medid
 
 ##### Estrutura de design
 
-Para facilitar o processo de design, já que usaria um framework, solicitei ao chatGpt uma estrutura básica de apresentação em Material, o mesmo fornecedu o seguinte código:
+Para facilitar o processo de design, já que usaria um framework, solicitei ao chatGpt uma estrutura básica de apresentação em Material, o mesmo forneceu o seguinte código:
 
 ```
 <!DOCTYPE html>
