@@ -19,4 +19,12 @@ class UsersModel {
         $result->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
         return $result;
     }
+
+    public function getById(int $id)
+    {
+        $query = "SELECT * FROM users WHERE id = " . $id;
+        $result = $this->connection->query($query);
+        $result->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
+        return $result;
+    }
 }

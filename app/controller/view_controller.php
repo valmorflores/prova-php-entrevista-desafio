@@ -10,8 +10,8 @@ class ViewController {
         $file_start =  __DIR__ . "/../view/design/html_start.php";
         include_once($file_start);
 
-        $file_header =  __DIR__ . "/../view/design/html_body_start.php";
-        include_once($file_header);
+        $file_body_start =  __DIR__ . "/../view/design/html_body_start.php";
+        include_once($file_body_start);
 
         $file_header =  __DIR__ . "/../view/design/html_header.php";
         include_once($file_header);
@@ -25,8 +25,8 @@ class ViewController {
         $file_content_end =  __DIR__ . "/../view/design/html_content_end.php";
         include_once($file_content_end);
 
-        $file_header =  __DIR__ . "/../view/design/html_body_end.php";
-        include_once($file_header);
+        $file_body_end =  __DIR__ . "/../view/design/html_body_end.php";
+        include_once($file_body_end);
       
         $file_end =  __DIR__ . "/../view/design/html_end.php";
         include_once($file_end);
