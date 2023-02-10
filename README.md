@@ -53,9 +53,13 @@ Considerei o seguinte:
 - Criei uma classe para controle da camada de visão. ViewController
 
 - No modelo original havia representação de dados (para display), algo similar a isso:
-``` <?php $var1 = '<td></td>'; 
+
+```
+<?php $var1 = '<td></td>'; 
 echo $var1; 
-?> ```
+?> 
+```
+
 Desta forma, usando concatenção de informações, gerando uma prévia em uma variável para posterior exibição. 
 Optei então por fazer uma exibição com uma separação de php e html na medida do possível, evitando assim o a criação de strings php com HTML dentro.
 
