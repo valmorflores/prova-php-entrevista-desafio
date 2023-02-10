@@ -65,7 +65,7 @@ Optei então por fazer uma exibição com uma separação de php e html na medid
 
 ##### ToDo
 
-- Criação de opçõpes em menu;
+- Criação de opções em menu;
 - Reformulação da apresentação, para que fique "Material compatible"
 - Criação de botão "Novo"
 - Criação de botão "Editar"
