@@ -54,6 +54,8 @@ class App {
             $userController = new UserController($connection);
             if ($this->app_method=='edit'){
                 $userController->edit($this->app_params);
+            } else if ($this->app_method=='del'){
+                $userController->delete_confirm($this->app_params);
             } else if ($this->app_method=='delete'){
                 $userController->delete($this->app_params);
             } else if ($this->app_method=='post'){

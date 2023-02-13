@@ -40,6 +40,14 @@ class UsersModel {
          
     }
 
+    public function deleteById($id){
+        $sql = "DELETE FROM users " .
+            " WHERE id = " . $id;
+        $dataUpdate = $this->connection->query( $sql );
+        $dataUpdate->setFetchMode(\PDO::FETCH_INTO, new \stdClass);
+        return true;
+    }
+
     public function insert($data) {
         $data = 
            array( 'name' => htmlspecialchars($_GET["name"]),

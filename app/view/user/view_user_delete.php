@@ -1,3 +1,5 @@
+
+
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
    <thead>
       <tr>
@@ -8,9 +10,11 @@
       </tr>
    </thead>
 <tbody>
+<?php $userId=0;?>
 <?php 
 foreach($data['users'] as $user) {
 ?>
+   <?php $userId=$user->id;?>
    <tr>
       <td><?php echo $user->id;?></td>
       <td><?php echo $user->name;?></td>
@@ -20,6 +24,16 @@ foreach($data['users'] as $user) {
 <?php } ?>
 </tbody>
 </table>
+
+
+<div class="container">
+      <a href="/user/delete/<?=$userId;?>">
+         <button class="mdc-button mdc-button--raised" style="margin-top: 20px; float: left;">
+         CONFIRMAR A EXCLUSÃO
+         </button>
+      </a>      
+   </div>
+
 
 
 

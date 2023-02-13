@@ -27,7 +27,7 @@ foreach($data['users'] as $user) {
       <td class="mdl-data-table__cell--non-numeric"><?php echo $user->email;?></td>    
       <td class="mdl-data-table__cell--non-numeric"><a href='/user/edit/<?php echo $user->id;?>'>
       <button class="mdc-button">Editar</button></a>
-      <a href='/user/delete/<?php echo $user->id;?>'>
+      <a href='/user/del/<?php echo $user->id;?>'>
       <button class="mdc-button">Excluir</button></a>
       </td>
    </tr>

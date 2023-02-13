@@ -26,26 +26,31 @@ class UserController {
         $data = array(
             'users' => $users
         );
-        $this->view->render('view_user_data_content.php',$data);
+        $this->view->render('user/view_user_data_content.php',$data);
     }
     
     public function add(){
         $users = [];
         $users[] = (object) array( 'name' => '', 'email' => '' );
         $data = array('users' => $users );
-        $this->view->render('view_user_add.php',$data);
+        $this->view->render('user/view_user_add.php',$data);
     }
 
     public function edit(int $id){
         $users = $this->user_model->getById($id);
         $data = array('users' => $users );
-        $this->view->render('view_user_edit.php',$data);
+        $this->view->render('user/view_user_edit.php',$data);
+    }
+
+    public function delete_confirm(int $id){
+        $users = $this->user_model->getById($id);
+        $data = array('users' => $users );
+        $this->view->render('user/view_user_delete.php',$data);
     }
 
     public function delete(int $id){
-        $users = $this->user_model->getById($id);
-        $data = array('users' => $users );
-        $this->view->render('view_user_delete.php',$data);
+        $users = $this->user_model->deleteById($id);
+        $this->index();
     }
 
     public function post($id) {

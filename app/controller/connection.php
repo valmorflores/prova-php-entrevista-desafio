@@ -9,6 +9,7 @@ class Connection {
 
     public function __construct()
     {
+        // Todo: put this information into .ENV file
         $path = __DIR__ . "/../../database/db.sqlite";
         $this->databaseFile = realpath($path);
         $this->connect();
