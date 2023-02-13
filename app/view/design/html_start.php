@@ -11,5 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/@material/dialog/dist/mdc.dialog.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@material/textfield/dist/mdc.textfield.min.css">
     <link rel="stylesheet" href="/public/assets/css/style.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/@material/mdc-card@latest/dist/mdc.card.css">
+    <!-- Material Design 2 JavaScript -->
+    <script src="https://unpkg.com/@material/mdc-card@latest/dist/mdc.card.js"></script>
+  
   </head>

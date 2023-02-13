@@ -1,3 +1,17 @@
+<div>
+<h3>Usuários</h3>
+
+<div class="mdc-card mdc-card--outlined success-card">
+  <div class="mdc-card__primary-action">
+    <div class="mdc-card__media mdc-card__media--16-9 success-card__media" style="background-image:url('')"></div>
+    <div class="mdc-card__primary success-card__primary">
+      <h2 class="mdc-card__title mdc-card__title--large success-card__title">
+      <p>A seguir você pode gerenciar os usuários
+         <br>Caso deseje adicionar um novo, use o botão a seguir</p>
+      </h2>
+    </div>
+  </div>
+</div>
 
    <div class="container">
       <a href="/user/add">
