@@ -3,32 +3,37 @@ foreach($data['users'] as $user) {
 ?>
 
 <form action="/user/post/<?php echo $user->id;?>">
+<h3>Edição de usuário</h3>
+   <div>Id</div>
+   <label class="mdc-text-field mdc-text-field--filled" style="min-width: 400px;">
+   <span class="mdc-text-field__ripple"></span>
+   <input class="mdc-text-field__input" type="text" name="id" aria-labelledby="my-label-id"
+         value="<?php echo $user->id;?>" readonly>
+   <span class="mdc-line-ripple"></span>
+   </label>
 
-   <div class="form-container">
+   <div>Nome</div>
+   <label class="mdc-text-field mdc-text-field--filled" style="min-width: 400px;">
+   <span class="mdc-text-field__ripple"></span>
+   <input class="mdc-text-field__input" type="text" name="name" aria-labelledby="my-label-id"
+         value="<?php echo $user->name;?>">
+   <span class="mdc-line-ripple"></span>
+   </label>
 
-      <div class="mdc-text-field" style="margin-top: 20px;">
-         <label class="mdc-floating-label" for="id">Id</label>
-         <input type="text" id="id" name="id" class="mdc-text-field__input" value="<?php echo $user->id;?>">
-         <div class="mdc-line-ripple"></div>
-      </div>
+   <div>E-mail</div>
+   <label class="mdc-text-field mdc-text-field--filled" style="min-width: 400px;">
+   <span class="mdc-text-field__ripple"></span>
+   <input class="mdc-text-field__input" type="text" name="email" aria-labelledby="my-label-id"
+         value="<?php echo $user->email;?>">
+   <span class="mdc-line-ripple"></span>
+   </label>
 
-      <div class="mdc-text-field" style="margin-top: 20px;">
-         <label class="mdc-floating-label" for="name">Name</label>
-         <input type="text" id="name" name="name" class="mdc-text-field__input" value="<?php echo $user->name;?>">
-         <div class="mdc-line-ripple"></div>
-      </div>
+   <div>
+   <button class="mdc-button mdc-button--raised" style="margin-top: 20px;">
+   ATUALIZAR
+   </button>
+   </div>
 
-      <div class="mdc-text-field" style="margin-top: 20px;">
-         <label class="mdc-floating-label" for="email">E-mail</label>
-         <input type="text" id="email" name="email" class="mdc-text-field__input" value="<?php echo $user->email;?>">
-         <div class="mdc-line-ripple"></div>
-      </div>
-      
-      <button class="mdc-button mdc-button--raised" style="margin-top: 20px;">
-      ATUALIZAR
-      </button>
-
-   </div>    
 
 </form>
 

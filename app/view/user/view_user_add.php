@@ -4,23 +4,27 @@ foreach($data['users'] as $user) {
 
 <form action="/user/put/0">
 
-   <div class="form-container">
+   
+<h3>Novo usuário</h3>
+   <div>Nome</div>
+   <label class="mdc-text-field mdc-text-field--filled" style="min-width: 400px;">
+   <span class="mdc-text-field__ripple"></span>
+   <input class="mdc-text-field__input" type="text" name="name" aria-labelledby="my-label-id">
+   <span class="mdc-line-ripple"></span>
+   </label>
 
-      <div class="mdc-text-field mdc-text-field--box" style="margin-top: 20px; min-width: 300px;">
-         <input type="text" id="name" name="name" class="mdc-text-field__input" value="<?php echo $user->name;?>">
-         <div class="mdc-line-ripple"></div>
-      </div>
-
-      <div class="mdc-text-field" style="margin-top: 20px; min-width: 300px;">
-         <input type="text" id="email" name="email" class="mdc-text-field__input" value="<?php echo $user->email;?>">
-         <div class="mdc-line-ripple"></div>
-      </div>
-      
+   <div>E-mail</div>
+   <label class="mdc-text-field mdc-text-field--filled" style="min-width: 400px;">
+   <span class="mdc-text-field__ripple"></span>
+   <input class="mdc-text-field__input" type="text" name="email" aria-labelledby="my-label-id">
+   <span class="mdc-line-ripple"></span>
+   </label>
+<div>
       <button class="mdc-button mdc-button--raised" style="margin-top: 20px;">
       ADICIONAR
       </button>
-
-   </div>    
+   </div>
+   
 
 </form>
 

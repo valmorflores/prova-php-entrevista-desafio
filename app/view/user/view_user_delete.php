@@ -1,4 +1,4 @@
-
+<h3>Exclusão de usuário</h3>
 
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
    <thead>
